@@ -9,7 +9,8 @@
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
     "start:host": "ng serve mdi -o",
     "start:mfinstalacao": "ng serve mfinstalacao -o",
-    "start": "concurrently \"npm run start:host\" \"npm run start:mfinstalacao\" "
+    "start:mfcobranca": "ng serve mfcobranca -o",
+    "start": "concurrently \"npm run start:host\" \"npm run start:mfinstalacao\" \"npm run start:mfcobranca\" "
   },
   "private": true,
   "dependencies": {

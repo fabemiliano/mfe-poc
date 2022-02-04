@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: 'mfinstalacao',
     loadChildren: () => import('mfinstalacao/Module').then(m => m.MarcaMedidorModule)
-  }
+  },
+  {
+    path: 'mfcobranca',
+    loadChildren: () => import('mfcobranca/Module').then(m => m.CobrancaModule)
+  },
 
 ];
 

@@ -9,7 +9,7 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: "mdi",
+    uniqueName: "mfcobranca",
     publicPath: "auto"
   },
   optimization: {
@@ -24,18 +24,18 @@ module.exports = {
     new ModuleFederationPlugin({
 
         // For remotes (please adjust)
-        // name: "mdi",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './projects/mdi/src/app/app.component.ts',
-        // },
+        name: "mfcobranca",
+        filename: "remoteEntry.js",
+        exposes: {
+            './Module': './projects/mfcobranca/src/app/cobranca/cobranca.module.ts',
+        },
 
         // For hosts (please adjust)
-        remotes: {
-            "mfinstalacao": "mfinstalacao@http://localhost:2001/remoteEntry.js",
-            "mfcobranca": "mfcobranca@http://localhost:2002/remoteEntry.js",
+        // remotes: {
+        //     "mdi": "mdi@http://localhost:2000/remoteEntry.js",
+        //     "mfinstalacao": "mfinstalacao@http://localhost:2001/remoteEntry.js",
 
-        },
+        // },
 
         shared: {
           "@angular/core": { singleton: true, strictVersion: true },

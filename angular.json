@@ -226,6 +226,118 @@
           }
         }
       }
+    },
+    "mfcobranca": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/mfcobranca",
+      "sourceRoot": "projects/mfcobranca/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/mfcobranca",
+            "index": "projects/mfcobranca/src/index.html",
+            "main": "projects/mfcobranca/src/main.ts",
+            "polyfills": "projects/mfcobranca/src/polyfills.ts",
+            "tsConfig": "projects/mfcobranca/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/mfcobranca/src/favicon.ico",
+              "projects/mfcobranca/src/assets"
+            ],
+            "styles": [
+              "projects/mfcobranca/src/styles.scss"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "projects/mfcobranca/webpack.config.js",
+            "commonChunk": false
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/mfcobranca/src/environments/environment.ts",
+                  "with": "projects/mfcobranca/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/mfcobranca/webpack.prod.config.js"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "mfcobranca:build:production",
+              "extraWebpackConfig": "projects/mfcobranca/webpack.prod.config.js"
+            },
+            "development": {
+              "browserTarget": "mfcobranca:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "extraWebpackConfig": "projects/mfcobranca/webpack.config.js",
+            "port": 2002
+          }
+        },
+        "extract-i18n": {
+          "builder": "ngx-build-plus:extract-i18n",
+          "options": {
+            "browserTarget": "mfcobranca:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/mfcobranca/src/test.ts",
+            "polyfills": "projects/mfcobranca/src/polyfills.ts",
+            "tsConfig": "projects/mfcobranca/tsconfig.spec.json",
+            "karmaConfig": "projects/mfcobranca/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/mfcobranca/src/favicon.ico",
+              "projects/mfcobranca/src/assets"
+            ],
+            "styles": [
+              "projects/mfcobranca/src/styles.scss"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "projects/mfcobranca/webpack.config.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "mdi"

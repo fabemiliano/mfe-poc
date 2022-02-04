@@ -8,3 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - yarn start para iniciar a aplicação
 
 
+Esse artigo explica o passo a passo para criar o mf inclusive como criar um repositorio com dois projetos 
+que compartilham o mesmo node modules
+
+https://dev.to/sbhuvane/micro-frontend-in-angular-using-module-federation-31om
