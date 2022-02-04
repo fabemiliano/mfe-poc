@@ -3,5 +3,230 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "mdi": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/mdi",
+      "sourceRoot": "projects/mdi/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/mdi",
+            "index": "projects/mdi/src/index.html",
+            "main": "projects/mdi/src/main.ts",
+            "polyfills": "projects/mdi/src/polyfills.ts",
+            "tsConfig": "projects/mdi/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/mdi/src/favicon.ico",
+              "projects/mdi/src/assets"
+            ],
+            "styles": [
+              "projects/mdi/src/styles.scss"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "projects/mdi/webpack.config.js",
+            "commonChunk": false
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/mdi/src/environments/environment.ts",
+                  "with": "projects/mdi/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/mdi/webpack.prod.config.js"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "mdi:build:production",
+              "extraWebpackConfig": "projects/mdi/webpack.prod.config.js"
+            },
+            "development": {
+              "browserTarget": "mdi:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "extraWebpackConfig": "projects/mdi/webpack.config.js",
+            "port": 2000
+          }
+        },
+        "extract-i18n": {
+          "builder": "ngx-build-plus:extract-i18n",
+          "options": {
+            "browserTarget": "mdi:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/mdi/src/test.ts",
+            "polyfills": "projects/mdi/src/polyfills.ts",
+            "tsConfig": "projects/mdi/tsconfig.spec.json",
+            "karmaConfig": "projects/mdi/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/mdi/src/favicon.ico",
+              "projects/mdi/src/assets"
+            ],
+            "styles": [
+              "projects/mdi/src/styles.scss"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "projects/mdi/webpack.config.js"
+          }
+        }
+      }
+    },
+    "mfinstalacao": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/mfinstalacao",
+      "sourceRoot": "projects/mfinstalacao/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/mfinstalacao",
+            "index": "projects/mfinstalacao/src/index.html",
+            "main": "projects/mfinstalacao/src/main.ts",
+            "polyfills": "projects/mfinstalacao/src/polyfills.ts",
+            "tsConfig": "projects/mfinstalacao/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/mfinstalacao/src/favicon.ico",
+              "projects/mfinstalacao/src/assets"
+            ],
+            "styles": [
+              "projects/mfinstalacao/src/styles.scss"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "projects/mfinstalacao/webpack.config.js",
+            "commonChunk": false
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/mfinstalacao/src/environments/environment.ts",
+                  "with": "projects/mfinstalacao/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/mfinstalacao/webpack.prod.config.js"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "mfinstalacao:build:production",
+              "extraWebpackConfig": "projects/mfinstalacao/webpack.prod.config.js"
+            },
+            "development": {
+              "browserTarget": "mfinstalacao:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "extraWebpackConfig": "projects/mfinstalacao/webpack.config.js",
+            "port": 2001
+          }
+        },
+        "extract-i18n": {
+          "builder": "ngx-build-plus:extract-i18n",
+          "options": {
+            "browserTarget": "mfinstalacao:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/mfinstalacao/src/test.ts",
+            "polyfills": "projects/mfinstalacao/src/polyfills.ts",
+            "tsConfig": "projects/mfinstalacao/tsconfig.spec.json",
+            "karmaConfig": "projects/mfinstalacao/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/mfinstalacao/src/favicon.ico",
+              "projects/mfinstalacao/src/assets"
+            ],
+            "styles": [
+              "projects/mfinstalacao/src/styles.scss"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "projects/mfinstalacao/webpack.config.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "mdi"
 }
